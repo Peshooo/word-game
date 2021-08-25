@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: records-storage
+  datasource:
+    url: ${database.url}
+    username: ${database.username}
+    password: ${database.password}
+    driverClassName: ${database.driver}
