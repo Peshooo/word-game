@@ -38,6 +38,10 @@ public abstract class AbstractGame {
         lastUpdateTimestamp = System.currentTimeMillis();
     }
 
+    public String getGameId() {
+        return gameId;
+    }
+
     public void enterWord(String word) {
         if (gameStatus == GameStatus.FINISHED) {
             return;
