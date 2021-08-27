@@ -3,3 +3,6 @@ redis:
   port: 6379
   username:
   password:
+
+websocket:
+  client: http://localhost:8080

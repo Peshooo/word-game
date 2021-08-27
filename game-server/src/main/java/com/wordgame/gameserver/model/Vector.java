@@ -1,6 +1,8 @@
 package com.wordgame.gameserver.model;
 
-public class Vector {
+import java.io.Serializable;
+
+public class Vector implements Serializable {
     private float x;
     private float y;
 

@@ -1,5 +1,6 @@
 package com.wordgame.gameserver.service.gameplay;
 
+import com.wordgame.gameserver.model.GameMode;
 import com.wordgame.gameserver.model.GameStatus;
 import com.wordgame.gameserver.model.WordMatches;
 import com.wordgame.gameserver.util.WordFactory;
@@ -8,25 +9,34 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public abstract class AbstractGame {
+public abstract class Game {
     protected static final int ACTIVE_WORDS = 10;
     protected static final int CANVAS_WIDTH = 1200;
     protected static final int CANVAS_HEIGHT = 600;
 
-    protected final long initialTimeMillis;
-
+    private final GameMode gameMode;
     private final String gameId;
     private final String nickname;
     private GameStatus gameStatus;
     protected long score;
     protected long timeLeftMillis;
     protected final List<Word> words;
-
     private long lastUpdateTimestamp;
 
-    public AbstractGame(String gameId, String nickname, long initialTimeMillis) {
-        this.initialTimeMillis = initialTimeMillis;
+    //TODO: Builder
+    public Game(GameMode gameMode, String gameId, String nickname, GameStatus gameStatus, long score, long timeLeftMillis, List<Word> words, long lastUpdateTimestamp) {
+        this.gameMode = gameMode;
+        this.gameId = gameId;
+        this.nickname = nickname;
+        this.gameStatus = gameStatus;
+        this.score = score;
+        this.timeLeftMillis = timeLeftMillis;
+        this.words = words;
+        this.lastUpdateTimestamp = lastUpdateTimestamp;
+    }
 
+    public Game(GameMode gameMode, String gameId, String nickname, long initialTimeMillis) {
+        this.gameMode = gameMode;
         this.gameId = gameId;
         this.nickname = nickname;
 
@@ -36,10 +46,6 @@ public abstract class AbstractGame {
         words = new ArrayList<>();
         refillWords();
         lastUpdateTimestamp = System.currentTimeMillis();
-    }
-
-    public String getGameId() {
-        return gameId;
     }
 
     public void enterWord(String word) {
@@ -133,5 +139,37 @@ public abstract class AbstractGame {
     private void finishGame() {
         timeLeftMillis = 0;
         gameStatus = GameStatus.FINISHED;
+    }
+
+    public GameMode getGameMode() {
+        return gameMode;
+    }
+
+    public String getGameId() {
+        return gameId;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public GameStatus getGameStatus() {
+        return gameStatus;
+    }
+
+    public long getScore() {
+        return score;
+    }
+
+    public long getTimeLeftMillis() {
+        return timeLeftMillis;
+    }
+
+    public List<Word> getWords() {
+        return words;
+    }
+
+    public long getLastUpdateTimestamp() {
+        return lastUpdateTimestamp;
     }
 }

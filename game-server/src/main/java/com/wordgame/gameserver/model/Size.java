@@ -1,6 +1,8 @@
 package com.wordgame.gameserver.model;
 
-public class Size {
+import java.io.Serializable;
+
+public class Size implements Serializable {
     private int height;
     private int width;
 

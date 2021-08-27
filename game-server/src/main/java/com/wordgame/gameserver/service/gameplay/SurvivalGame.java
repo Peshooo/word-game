@@ -1,14 +1,21 @@
 package com.wordgame.gameserver.service.gameplay;
 
+import com.wordgame.gameserver.model.GameMode;
+import com.wordgame.gameserver.model.GameStatus;
 import com.wordgame.gameserver.model.WordMatches;
 
-public class SurvivalGame extends AbstractGame {
+import java.util.List;
+
+public class SurvivalGame extends Game {
     private static final long INITIAL_TIME_MILLIS = 10_000;
     private static final long MAXIMUM_TIME_MILLIS = 10_000;
     private static final long ADDITIONAL_TIME_MILLIS_PER_CORRECT_WORD = 1_000;
 
+    public SurvivalGame(String gameId, String nickname, GameStatus gameStatus, long score, long timeLeftMillis, List<Word> words, long lastUpdateTimestamp) {
+        super(GameMode.SURVIVAL, gameId, nickname, gameStatus, score, timeLeftMillis, words, lastUpdateTimestamp);
+    }
     public SurvivalGame(String gameId, String nickname) {
-        super(gameId, nickname, Math.min(MAXIMUM_TIME_MILLIS, INITIAL_TIME_MILLIS));
+        super(GameMode.SURVIVAL, gameId, nickname, Math.min(MAXIMUM_TIME_MILLIS, INITIAL_TIME_MILLIS));
     }
 
     @Override

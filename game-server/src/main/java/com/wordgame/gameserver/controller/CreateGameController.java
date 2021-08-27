@@ -1,11 +1,9 @@
 package com.wordgame.gameserver.controller;
 
 import com.wordgame.gameserver.model.reqres.CreateGameResponse;
-import com.wordgame.gameserver.service.gameplay.AbstractGame;
 import com.wordgame.gameserver.service.gameplay.StandardGame;
 import com.wordgame.gameserver.service.gameplay.SurvivalGame;
-import com.wordgame.gameserver.service.manager.StandardGamesManager;
-import com.wordgame.gameserver.service.manager.SurvivalGamesManager;
+import com.wordgame.gameserver.service.manager.GamesManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,11 +14,9 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/game")
-public class GameController {
+public class CreateGameController {
     @Autowired
-    private StandardGamesManager standardGamesManager;
-    @Autowired
-    private SurvivalGamesManager survivalGamesManager;
+    private GamesManager gamesManager;
 
     @PostMapping("/standard")
     public CreateGameResponse createStandardGame(HttpServletRequest request) {
@@ -28,7 +24,7 @@ public class GameController {
         String gameId = UUID.randomUUID().toString();
 
         StandardGame standardGame = new StandardGame(nickname, gameId);
-        standardGamesManager.save(standardGame);
+        gamesManager.save(standardGame);
 
         return new CreateGameResponse(standardGame.getGameId());
     }
@@ -39,7 +35,7 @@ public class GameController {
         String gameId = UUID.randomUUID().toString();
 
         SurvivalGame survivalGame = new SurvivalGame(nickname, gameId);
-        survivalGamesManager.save(survivalGame);
+        gamesManager.save(survivalGame);
 
         return new CreateGameResponse(survivalGame.getGameId());
     }
