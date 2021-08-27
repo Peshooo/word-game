@@ -1,0 +1,4 @@
+com/wordgame/gameserver/configuration/RedisConfiguration.class
+com/wordgame/gameserver/configuration/WebSocketConfiguration.class
+com/wordgame/gameserver/controller/TestController.class
+com/wordgame/gameserver/Application.class
