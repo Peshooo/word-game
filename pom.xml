@@ -10,6 +10,8 @@
     <modules>
         <module>records-storage</module>
         <module>game-server</module>
+        <module>web-ui</module>
+        <module>common-models</module>
     </modules>
 
     <packaging>pom</packaging>

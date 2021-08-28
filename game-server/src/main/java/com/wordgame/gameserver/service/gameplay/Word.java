@@ -3,7 +3,9 @@ package com.wordgame.gameserver.service.gameplay;
 import com.wordgame.gameserver.model.Size;
 import com.wordgame.gameserver.model.Vector;
 
-public class Word {
+import java.io.Serializable;
+
+public class Word implements Serializable {
     private String word;
     private String color;
     private Size size;
@@ -29,6 +31,14 @@ public class Word {
 
     public Position getPosition() {
         return position;
+    }
+
+    public Vector getMovePixelsPerMillisecond() {
+        return movePixelsPerMillisecond;
+    }
+
+    public long getLastMoveTimestamp() {
+        return lastMoveTimestamp;
     }
 
     public void move(long timestamp) {

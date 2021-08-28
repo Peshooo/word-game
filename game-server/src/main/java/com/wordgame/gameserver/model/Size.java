@@ -2,7 +2,7 @@ package com.wordgame.gameserver.model;
 
 import java.io.Serializable;
 
-public class Size implements Serializable {
+public class Size implements Serializable, Comparable<Size> {
     private int height;
     private int width;
 
@@ -20,5 +20,16 @@ public class Size implements Serializable {
 
     public int getWidth() {
         return width;
+    }
+
+    @Override
+    public int compareTo(Size size) {
+        int compareHeight = height - size.getHeight();
+
+        if (compareHeight != 0) {
+            return compareHeight;
+        }
+
+        return width - size.getWidth();
     }
 }

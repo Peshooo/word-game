@@ -14,14 +14,14 @@ public abstract class Game {
     protected static final int CANVAS_WIDTH = 1200;
     protected static final int CANVAS_HEIGHT = 600;
 
-    private final GameMode gameMode;
-    private final String gameId;
-    private final String nickname;
-    private GameStatus gameStatus;
+    protected GameMode gameMode;
+    protected String gameId;
+    protected String nickname;
+    protected GameStatus gameStatus;
     protected long score;
     protected long timeLeftMillis;
     protected final List<Word> words;
-    private long lastUpdateTimestamp;
+    protected long lastUpdateTimestamp;
 
     //TODO: Builder
     public Game(GameMode gameMode, String gameId, String nickname, GameStatus gameStatus, long score, long timeLeftMillis, List<Word> words, long lastUpdateTimestamp) {
@@ -93,6 +93,8 @@ public abstract class Game {
         move(timestamp);
         updateTimeIfRunning(timestamp);
         finishGameIfNoTimeLeft();
+
+        lastUpdateTimestamp = timestamp;
     }
 
     private void move(long timestamp) {
@@ -127,7 +129,6 @@ public abstract class Game {
     private void updateTime(long timestamp) {
         long millisecondsSinceLastUpdate = timestamp - lastUpdateTimestamp;
         timeLeftMillis -= millisecondsSinceLastUpdate;
-        lastUpdateTimestamp = timestamp;
     }
 
     private void finishGameIfNoTimeLeft() {
