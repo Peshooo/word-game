@@ -1,0 +1,8 @@
+/home/pesho/Documents/Projects/word-game/web-ui/src/main/java/com/wordgame/webui/model/GameRecord.java
+/home/pesho/Documents/Projects/word-game/web-ui/src/main/java/com/wordgame/webui/Application.java
+/home/pesho/Documents/Projects/word-game/web-ui/src/main/java/com/wordgame/webui/controller/WebMvcController.java
+/home/pesho/Documents/Projects/word-game/web-ui/src/main/java/com/wordgame/webui/configuration/RestTemplateConfiguration.java
+/home/pesho/Documents/Projects/word-game/web-ui/src/main/java/com/wordgame/webui/filter/NicknameFilter.java
+/home/pesho/Documents/Projects/word-game/web-ui/src/main/java/com/wordgame/webui/model/CreateGameResponse.java
+/home/pesho/Documents/Projects/word-game/web-ui/src/main/java/com/wordgame/webui/service/GameServerRestClient.java
+/home/pesho/Documents/Projects/word-game/web-ui/src/main/java/com/wordgame/webui/configuration/WebMvcConfiguration.java
