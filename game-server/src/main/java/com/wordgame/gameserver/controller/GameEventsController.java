@@ -1,5 +1,6 @@
 package com.wordgame.gameserver.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wordgame.gameserver.model.GameStatus;
 import com.wordgame.gameserver.model.reqres.GameStateResponse;
 import com.wordgame.gameserver.service.gameplay.Game;
@@ -10,9 +11,11 @@ import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 //TODO: Create service
 @Controller
+@CrossOrigin("${websocket.client}")
 public class GameEventsController {
     @Autowired
     private GamesManager gamesManager;
@@ -32,7 +35,6 @@ public class GameEventsController {
     @SendTo("/game-state/{gameId}")
     public GameStateResponse getGameState(@DestinationVariable String gameId) {
         Game game = gamesManager.perform(gameId, this::updateGame);
-
         if (game.getGameStatus() == GameStatus.FINISHED) {
             gamesManager.delete(gameId); //TODO: Record finished game
         }
@@ -52,8 +54,8 @@ public class GameEventsController {
         gameStateResponse.setNickname(game.getNickname());
         gameStateResponse.setStatus(game.getGameStatus());
         gameStateResponse.setScore(game.getScore());
-        gameStateResponse.setTimeLeftMillis(gameStateResponse.getTimeLeftMillis());
-        gameStateResponse.setWords(gameStateResponse.getWords());
+        gameStateResponse.setTimeLeftMillis(game.getTimeLeftMillis());
+        gameStateResponse.setWords(game.getWords());
 
         return gameStateResponse;
     }

@@ -6,8 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="web-ui" />
         <module name="records-storage" />
         <module name="game-server" />
+        <module name="common-models" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

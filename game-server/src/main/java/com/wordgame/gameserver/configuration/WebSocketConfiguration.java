@@ -16,7 +16,7 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
         config.enableSimpleBroker("/game-state");
-        config.setApplicationDestinationPrefixes("/word-entered");
+        config.setApplicationDestinationPrefixes("/game-events");
     }
 
     @Override
