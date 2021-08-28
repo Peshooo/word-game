@@ -12,7 +12,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="game-event-responder" target="15" />
-      <module name="game-server" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

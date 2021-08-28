@@ -9,6 +9,7 @@
     <version>1.0.0</version>
     <modules>
         <module>records-storage</module>
+        <module>game-server</module>
     </modules>
 
     <packaging>pom</packaging>
