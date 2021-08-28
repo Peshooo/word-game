@@ -2,7 +2,9 @@ package com.wordgame.webui.controller;
 
 import com.google.common.collect.ImmutableMap;
 import com.wordgame.webui.model.GameRecord;
+import com.wordgame.webui.model.GameRecordsResponse;
 import com.wordgame.webui.service.GameServerRestClient;
+import com.wordgame.webui.service.RecordsStorageRestClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,12 +29,16 @@ public class WebMvcController {
 //    }
 
     @Autowired
+    private RecordsStorageRestClient recordsStorageRestClient;
+
+    @Autowired
     private GameServerRestClient gameServerRestClient;
 
     @RequestMapping("/")
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
-        List<GameRecord> standardTopFive = Collections.emptyList();//standardRecordsDao.getTopFiveLast24Hours();
-        List<GameRecord> survivalTopFive = Collections.emptyList();// survivalRecordsDao.getTopFiveLast24Hours();
+        GameRecordsResponse gameRecordsResponse = recordsStorageRestClient.getGameRecords();
+        List<GameRecord> standardTopFive = gameRecordsResponse.getStandardGameRecords();
+        List<GameRecord> survivalTopFive = gameRecordsResponse.getSurvivalGameRecords();
 
         Map<String, Object> context =
                 ImmutableMap.<String, Object>builder()

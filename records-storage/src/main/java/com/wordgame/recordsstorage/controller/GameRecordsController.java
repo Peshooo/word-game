@@ -1,6 +1,7 @@
 package com.wordgame.recordsstorage.controller;
 
 import com.wordgame.recordsstorage.model.GameRecord;
+import com.wordgame.recordsstorage.model.GameRecordsResponse;
 import com.wordgame.recordsstorage.model.StandardGameRecord;
 import com.wordgame.recordsstorage.model.SurvivalGameRecord;
 import com.wordgame.recordsstorage.repository.GameRecordsRepository;
@@ -25,13 +26,11 @@ public class GameRecordsController {
         gameRecordsRepository.save(gameRecord);
     }
 
-    @GetMapping("/standard")
-    public List<? extends GameRecord> getStandard() {
-        return gameRecordsRepository.getTopFiveLastDayStandard();
-    }
+    @GetMapping
+    public GameRecordsResponse getGameRecords() {
+        List<GameRecord> standardGameRecords = gameRecordsRepository.getTopFiveLastDayStandard();
+        List<GameRecord> survivalGameRecords = gameRecordsRepository.getTopFiveLastDaySurvival();
 
-    @GetMapping("/survival")
-    public List<? extends GameRecord> getSurvival() {
-        return gameRecordsRepository.getTopFiveLastDaySurvival();
+        return new GameRecordsResponse(standardGameRecords, survivalGameRecords);
     }
 }
