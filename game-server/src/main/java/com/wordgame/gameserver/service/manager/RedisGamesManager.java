@@ -4,6 +4,7 @@ import com.wordgame.gameserver.model.RedisGame;
 import com.wordgame.gameserver.service.gameplay.Game;
 import com.wordgame.gameserver.service.gameplay.StandardGame;
 import com.wordgame.gameserver.service.gameplay.SurvivalGame;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -17,15 +18,13 @@ import java.util.function.BiFunction;
 @Service
 public class RedisGamesManager implements GamesManager {
     private static final String HASH_NAME = "games";
-    private static final String GAME_LOCK_FORMAT = "%s.game.lock";
 
-    private final RedisConnectionFactory redisConnectionFactory;
-    private final RedisTemplate<String, Object> redisTemplate;
     private final RedisMap<String, RedisGame> redisMap;
 
+    @Autowired
+    private RedisGameLockService redisGameLockService;
+
     public RedisGamesManager(RedisTemplate<String, Object> redisTemplate, RedisConnectionFactory redisConnectionFactory) {
-        this.redisTemplate = redisTemplate;
-        this.redisConnectionFactory = redisConnectionFactory;
         BoundHashOperations<String, String, RedisGame> boundHashOperations = redisTemplate.boundHashOps(HASH_NAME);
         redisMap = new DefaultRedisMap<>(boundHashOperations);
     }
@@ -46,27 +45,16 @@ public class RedisGamesManager implements GamesManager {
     @Override
     public void delete(String gameId) {
         redisMap.remove(gameId);
-        redisTemplate.delete(getGameLockName(gameId));
     }
 
     @Override
     public Game perform(String gameId, BiFunction<String, Game, Game> operation) {
-        RedisAtomicInteger gameLock = new RedisAtomicInteger(getGameLockName(gameId), redisConnectionFactory);
+        redisGameLockService.acquireLock(gameId);
 
-        acquireLock(gameLock);
         try {
             return performInIsolation(gameId, operation);
         } finally {
-            releaseLock(gameLock);
-        }
-    }
-
-    private String getGameLockName(String gameId) {
-        return String.format(GAME_LOCK_FORMAT, gameId);
-    }
-
-    private void acquireLock(RedisAtomicInteger lock) {
-        while (!lock.compareAndSet(0, 1)) {
+            redisGameLockService.releaseLock(gameId);
         }
     }
 
@@ -75,12 +63,9 @@ public class RedisGamesManager implements GamesManager {
         Game game = toGame(redisGame);
         Game result = operation.apply(gameId, game);
         RedisGame redisGameResult = toRedisGame(result);
+        redisMap.replace(gameId, redisGameResult);
 
-        return toGame(redisMap.replace(gameId, redisGameResult));
-    }
-
-    private void releaseLock(RedisAtomicInteger lock) {
-        lock.set(0);
+        return toGame(redisGameResult);
     }
 
     private RedisGame toRedisGame(Game game) {
