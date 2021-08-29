@@ -6,6 +6,9 @@ public class GameRecordsResponse {
     private List<GameRecord> standardGameRecords;
     private List<GameRecord> survivalGameRecords;
 
+    public GameRecordsResponse() {
+    }
+
     public GameRecordsResponse(List<GameRecord> standardGameRecords, List<GameRecord> survivalGameRecords) {
         this.standardGameRecords = standardGameRecords;
         this.survivalGameRecords = survivalGameRecords;

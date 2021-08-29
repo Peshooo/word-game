@@ -1,6 +1,7 @@
 com/wordgame/recordsstorage/controller/GameRecordsController.class
 com/wordgame/recordsstorage/model/GameRecord.class
 com/wordgame/recordsstorage/model/SurvivalGameRecord.class
+com/wordgame/recordsstorage/model/GameRecordsResponse.class
 com/wordgame/recordsstorage/repository/GameRecordsRepository.class
 com/wordgame/recordsstorage/Application.class
 com/wordgame/recordsstorage/model/StandardGameRecord.class

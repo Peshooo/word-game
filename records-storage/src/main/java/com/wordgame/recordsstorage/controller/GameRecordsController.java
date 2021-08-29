@@ -28,8 +28,8 @@ public class GameRecordsController {
 
     @GetMapping
     public GameRecordsResponse getGameRecords() {
-        List<GameRecord> standardGameRecords = gameRecordsRepository.getTopFiveLastDayStandard();
-        List<GameRecord> survivalGameRecords = gameRecordsRepository.getTopFiveLastDaySurvival();
+        List<StandardGameRecord> standardGameRecords = gameRecordsRepository.getTopFiveLastDayStandard();
+        List<SurvivalGameRecord> survivalGameRecords = gameRecordsRepository.getTopFiveLastDaySurvival();
 
         return new GameRecordsResponse(standardGameRecords, survivalGameRecords);
     }

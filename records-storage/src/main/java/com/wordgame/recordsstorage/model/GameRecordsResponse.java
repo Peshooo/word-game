@@ -3,19 +3,19 @@ package com.wordgame.recordsstorage.model;
 import java.util.List;
 
 public class GameRecordsResponse {
-    private List<GameRecord> standardGameRecords;
-    private List<GameRecord> survivalGameRecords;
+    private List<? extends GameRecord> standardGameRecords;
+    private List<? extends GameRecord> survivalGameRecords;
 
-    public GameRecordsResponse(List<GameRecord> standardGameRecords, List<GameRecord> survivalGameRecords) {
+    public GameRecordsResponse(List<? extends GameRecord> standardGameRecords, List<? extends GameRecord> survivalGameRecords) {
         this.standardGameRecords = standardGameRecords;
         this.survivalGameRecords = survivalGameRecords;
     }
 
-    public List<GameRecord> getStandardGameRecords() {
+    public List<? extends GameRecord> getStandardGameRecords() {
         return standardGameRecords;
     }
 
-    public List<GameRecord> getSurvivalGameRecords() {
+    public List<? extends GameRecord> getSurvivalGameRecords() {
         return survivalGameRecords;
     }
 }

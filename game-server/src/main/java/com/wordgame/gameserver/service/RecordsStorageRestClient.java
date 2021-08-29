@@ -1,14 +1,11 @@
-package com.wordgame.webui.service;
+package com.wordgame.gameserver.service;
 
-import com.wordgame.webui.model.GameRecord;
-import com.wordgame.webui.model.GameRecordsResponse;
+import com.wordgame.gameserver.model.GameRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
-
-import java.util.List;
 
 @Service
 public class RecordsStorageRestClient {
@@ -21,13 +18,13 @@ public class RecordsStorageRestClient {
     @Autowired
     private RestTemplate restTemplate;
 
-    public GameRecordsResponse getGameRecords() {
+    public void saveRecord(String gameMode, GameRecord gameRecord) {
         String url = UriComponentsBuilder
                 .fromHttpUrl(baseUrl)
-                .pathSegment(gameRecordsEndpoint)
+                .pathSegment(gameRecordsEndpoint, gameMode)
                 .build()
                 .toString();
 
-        return restTemplate.getForObject(url, GameRecordsResponse.class);
+        restTemplate.postForLocation(url, gameRecord);
     }
 }
