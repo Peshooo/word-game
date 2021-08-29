@@ -3,4 +3,5 @@
 /home/pesho/Documents/Projects/word-game/records-storage/src/main/java/com/wordgame/recordsstorage/repository/GameRecordsRepository.java
 /home/pesho/Documents/Projects/word-game/records-storage/src/main/java/com/wordgame/recordsstorage/Application.java
 /home/pesho/Documents/Projects/word-game/records-storage/src/main/java/com/wordgame/recordsstorage/controller/GameRecordsController.java
+/home/pesho/Documents/Projects/word-game/records-storage/src/main/java/com/wordgame/recordsstorage/model/GameRecordsResponse.java
 /home/pesho/Documents/Projects/word-game/records-storage/src/main/java/com/wordgame/recordsstorage/model/GameRecord.java

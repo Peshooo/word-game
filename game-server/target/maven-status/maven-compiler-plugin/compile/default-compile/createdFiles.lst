@@ -5,6 +5,7 @@ com/wordgame/gameserver/configuration/WebSocketConfiguration.class
 com/wordgame/gameserver/service/gameplay/Word.class
 com/wordgame/gameserver/controller/CreateGameController.class
 com/wordgame/gameserver/configuration/JacksonConfiguration.class
+com/wordgame/gameserver/configuration/RestTemplateConfiguration.class
 com/wordgame/gameserver/model/GameStatus.class
 com/wordgame/gameserver/service/gameplay/SurvivalGame.class
 com/wordgame/gameserver/service/gameplay/Word$1.class
@@ -16,10 +17,12 @@ com/wordgame/gameserver/model/GameMode.class
 com/wordgame/gameserver/service/gameplay/Position.class
 com/wordgame/gameserver/configuration/DeterministicObjectMapper$CustomComparators.class
 com/wordgame/gameserver/model/reqres/GameStateResponse.class
+com/wordgame/gameserver/model/GameRecord.class
 com/wordgame/gameserver/util/WidthMeasurer.class
 com/wordgame/gameserver/service/manager/RedisGamesManager.class
 com/wordgame/gameserver/model/Vector.class
 com/wordgame/gameserver/service/gameplay/StandardGame.class
+com/wordgame/gameserver/service/RecordsStorageRestClient.class
 com/wordgame/gameserver/service/manager/RedisGamesManager$1.class
 com/wordgame/gameserver/controller/GameEventsController.class
 com/wordgame/gameserver/service/manager/GamesManager.class

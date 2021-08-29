@@ -24,8 +24,8 @@ public interface GameRecordsRepository extends CrudRepository<GameRecord, String
             "LIMIT 5 ";
 
     @Query(value = GET_TOP_FIVE_LAST_DAY_STANDARD, nativeQuery = true)
-    List<GameRecord> getTopFiveLastDayStandard();
+    List<StandardGameRecord> getTopFiveLastDayStandard();
 
     @Query(value = GET_TOP_FIVE_LAST_DAY_SURVIVAL, nativeQuery = true)
-    List<GameRecord> getTopFiveLastDaySurvival();
+    List<SurvivalGameRecord> getTopFiveLastDaySurvival();
 }

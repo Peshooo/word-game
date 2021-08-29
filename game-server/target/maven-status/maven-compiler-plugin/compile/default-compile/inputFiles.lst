@@ -1,6 +1,7 @@
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/service/gameplay/StandardGame.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/configuration/DeterministicObjectMapper.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/model/Vector.java
+/home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/model/GameRecord.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/util/WordFactory.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/model/RedisGame.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/model/Size.java
@@ -19,6 +20,8 @@
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/configuration/JacksonConfiguration.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/service/manager/RedisGamesManager.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/service/gameplay/SurvivalGame.java
+/home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/configuration/RestTemplateConfiguration.java
+/home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/service/RecordsStorageRestClient.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/controller/CreateGameController.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/controller/GameEventsController.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/configuration/RedisConfiguration.java
