@@ -1,7 +1,15 @@
-com/wordgame/recordsstorage/controller/GameRecordsController.class
+com/wordgame/recordsstorage/service/GameRecordMessageTranslator.class
 com/wordgame/recordsstorage/model/GameRecord.class
-com/wordgame/recordsstorage/model/SurvivalGameRecord.class
+com/wordgame/recordsstorage/listener/StandardGameRecordsMessageListener.class
+com/wordgame/recordsstorage/service/SurvivalGameRecordsMessageHandler.class
 com/wordgame/recordsstorage/model/GameRecordsResponse.class
+com/wordgame/recordsstorage/listener/SurvivalGameRecordsMessageListener.class
+com/wordgame/recordsstorage/configuration/KafkaConsumerConfiguration.class
 com/wordgame/recordsstorage/repository/GameRecordsRepository.class
+com/wordgame/recordsstorage/configuration/KafkaTopicsConfiguration.class
+com/wordgame/recordsstorage/service/StandardGameRecordsMessageHandler.class
+com/wordgame/recordsstorage/controller/GameRecordsController.class
+com/wordgame/recordsstorage/model/GameRecordMessage.class
+com/wordgame/recordsstorage/model/SurvivalGameRecord.class
 com/wordgame/recordsstorage/Application.class
 com/wordgame/recordsstorage/model/StandardGameRecord.class

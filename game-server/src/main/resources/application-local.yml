@@ -7,6 +7,9 @@ redis:
   username:
   password:
 
+kafka:
+  bootstrap-servers: http://localhost:29092
+
 websocket:
   client: http://localhost:8080
 

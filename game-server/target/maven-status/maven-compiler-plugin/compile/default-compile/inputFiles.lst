@@ -1,5 +1,5 @@
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/service/gameplay/StandardGame.java
-/home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/configuration/DeterministicObjectMapper.java
+/home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/service/kafka/GameRecordsMessageSender.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/model/Vector.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/model/GameRecord.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/util/WordFactory.java
@@ -10,6 +10,7 @@
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/model/WordMatches.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/service/gameplay/Word.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/model/reqres/GameStateResponse.java
+/home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/configuration/KafkaProducerConfiguration.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/service/manager/GamesManager.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/model/reqres/CreateGameResponse.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/model/GameStatus.java
@@ -17,7 +18,6 @@
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/model/GameMode.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/util/WidthMeasurer.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/Application.java
-/home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/configuration/JacksonConfiguration.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/service/manager/RedisGamesManager.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/service/gameplay/SurvivalGame.java
 /home/pesho/Documents/Projects/word-game/game-server/src/main/java/com/wordgame/gameserver/configuration/RestTemplateConfiguration.java
