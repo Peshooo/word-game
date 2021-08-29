@@ -6,3 +6,16 @@ spring:
     username: ${database.username}
     password: ${database.password}
     driverClassName: ${database.driver}
+
+kafka:
+  topics:
+    standard-game-records:
+      name: standard-game-records
+      consumer-group: standard-game-records-group
+      partitions: 3
+      replication-factor: 1
+    survival-game-records:
+      name: survival-game-records
+      consumer-group: survival-game-records-group
+      partitions: 3
+      replication-factor: 1

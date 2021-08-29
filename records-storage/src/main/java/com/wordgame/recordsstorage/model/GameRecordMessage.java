@@ -1,19 +1,10 @@
-package com.wordgame.gameserver.model;
+package com.wordgame.recordsstorage.model;
 
-import java.time.OffsetDateTime;
-
-public class GameRecord {
+public class GameRecordMessage {
     private String gameId;
     private String nickname;
     private long score;
     private long createdAt;
-
-    public GameRecord(String gameId, String nickname, long score, long createdAt) {
-        this.gameId = gameId;
-        this.nickname = nickname;
-        this.score = score;
-        this.createdAt = createdAt;
-    }
 
     public String getGameId() {
         return gameId;

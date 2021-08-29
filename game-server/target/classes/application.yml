@@ -1,3 +1,6 @@
 spring:
   application:
     name: game-server
+
+kafka:
+  topic-format: "%s-game-records"

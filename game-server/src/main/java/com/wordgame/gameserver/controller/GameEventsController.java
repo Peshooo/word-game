@@ -6,6 +6,7 @@ import com.wordgame.gameserver.model.GameStatus;
 import com.wordgame.gameserver.model.reqres.GameStateResponse;
 import com.wordgame.gameserver.service.RecordsStorageRestClient;
 import com.wordgame.gameserver.service.gameplay.Game;
+import com.wordgame.gameserver.service.kafka.GameRecordsMessageSender;
 import com.wordgame.gameserver.service.manager.GamesManager;
 import com.wordgame.gameserver.service.manager.RedisGamesManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
+import java.time.Instant;
 import java.time.OffsetDateTime;
 
 //TODO: Create service
@@ -26,6 +28,9 @@ public class GameEventsController {
 
     @Autowired
     private RecordsStorageRestClient recordsStorageRestClient;
+
+    @Autowired
+    private GameRecordsMessageSender gameRecordsMessageSender;
 
     @MessageMapping("/{gameId}/{word}")
     public void enterWord(@DestinationVariable String gameId, @DestinationVariable String word) {
@@ -43,9 +48,10 @@ public class GameEventsController {
     public GameStateResponse getGameState(@DestinationVariable String gameId) {
         Game game = gamesManager.perform(gameId, this::updateGame);
         if (game.getGameStatus() == GameStatus.FINISHED) {
-            GameRecord gameRecord = new GameRecord(game.getGameId(), game.getNickname(), game.getScore(), OffsetDateTime.now());
-            recordsStorageRestClient.saveRecord(game.getGameMode().name().toLowerCase(), gameRecord);
-            gamesManager.delete(gameId); //TODO: Record finished game
+            GameRecord gameRecord = new GameRecord(game.getGameId(), game.getNickname(), game.getScore(), Instant.now().toEpochMilli());
+            gameRecordsMessageSender.send(game.getGameMode().name().toLowerCase(), gameRecord);
+            //recordsStorageRestClient.saveRecord(game.getGameMode().name().toLowerCase(), gameRecord);
+            gamesManager.delete(gameId);
         }
 
         return toGameStateResponse(game);
