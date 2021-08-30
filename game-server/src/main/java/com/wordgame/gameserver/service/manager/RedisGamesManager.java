@@ -2,6 +2,7 @@ package com.wordgame.gameserver.service.manager;
 
 import com.wordgame.gameserver.model.RedisGame;
 import com.wordgame.gameserver.model.SerializableDummyObject;
+import com.wordgame.gameserver.service.RedisGameTranslator;
 import com.wordgame.gameserver.service.gameplay.Game;
 import com.wordgame.gameserver.service.gameplay.StandardGame;
 import com.wordgame.gameserver.service.gameplay.SurvivalGame;
@@ -43,7 +44,7 @@ public class RedisGamesManager implements GamesManager {
         valueOperations.set(SerializableDummyObject.getInstance());
         valueOperations.expire(GAME_EXPIRATION);
 
-        RedisGame redisGame = toRedisGame(game);
+        RedisGame redisGame = RedisGameTranslator.toRedisGame(game);
         redisMap.put(redisGame.getGameId(), redisGame);
     }
 
@@ -51,7 +52,7 @@ public class RedisGamesManager implements GamesManager {
     public Game get(String gameId) {
         RedisGame redisGame = getRedisGame(gameId);
 
-        return toGame(redisGame);
+        return RedisGameTranslator.fromRedisGame(redisGame);
     }
 
     private RedisGame getRedisGame(String gameId) {
@@ -83,37 +84,15 @@ public class RedisGamesManager implements GamesManager {
     }
 
     private Game performInIsolation(String gameId, BiFunction<String, Game, Game> operation) {
-        RedisGame redisGame = getRedisGame(gameId);
-        Game game = toGame(redisGame);
+        Game game = get(gameId);
         Game result = operation.apply(gameId, game);
-        RedisGame redisGameResult = toRedisGame(result);
-        redisMap.replace(gameId, redisGameResult);
+        replace(result);
 
-        return toGame(redisGameResult);
+        return result;
     }
 
-    private RedisGame toRedisGame(Game game) {
-        RedisGame redisGame = new RedisGame();
-        redisGame.setGameId(game.getGameId());
-        redisGame.setNickname(game.getNickname());
-        redisGame.setGameMode(game.getGameMode());
-        redisGame.setScore(game.getScore());
-        redisGame.setGameStatus(game.getGameStatus());
-        redisGame.setWords(game.getWords());
-        redisGame.setLastUpdateTimestamp(game.getLastUpdateTimestamp());
-        redisGame.setTimeLeftMillis(game.getTimeLeftMillis());
-
-        return redisGame;
-    }
-
-    private Game toGame(RedisGame redisGame) {
-        switch (redisGame.getGameMode()) {
-            case STANDARD:
-                return new StandardGame(redisGame.getGameId(), redisGame.getNickname(), redisGame.getGameStatus(), redisGame.getScore(), redisGame.getTimeLeftMillis(), redisGame.getWords(), redisGame.getLastUpdateTimestamp());
-            case SURVIVAL:
-                return new SurvivalGame(redisGame.getGameId(), redisGame.getNickname(), redisGame.getGameStatus(), redisGame.getScore(), redisGame.getTimeLeftMillis(), redisGame.getWords(), redisGame.getLastUpdateTimestamp());
-            default:
-                throw new RuntimeException("Unrecognized game mode"); //TODO: Replace both runtime exceptions, add exception handlers in all projects
-        }
+    private void replace(Game game) {
+        RedisGame redisGameResult = RedisGameTranslator.toRedisGame(game);
+        redisMap.replace(game.getGameId(), redisGameResult);
     }
 }

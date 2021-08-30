@@ -26,10 +26,11 @@ com/wordgame/gameserver/service/manager/RedisGameLockService.class
 com/wordgame/gameserver/model/Vector.class
 com/wordgame/gameserver/service/gameplay/StandardGame.class
 com/wordgame/gameserver/service/RecordsStorageRestClient.class
-com/wordgame/gameserver/service/manager/RedisGamesManager$1.class
 com/wordgame/gameserver/service/GameFactory.class
 com/wordgame/gameserver/controller/GameEventsController.class
 com/wordgame/gameserver/service/manager/GamesManager.class
+com/wordgame/gameserver/model/RedisGame$Builder.class
+com/wordgame/gameserver/service/RedisGameTranslator.class
 com/wordgame/gameserver/service/kafka/GameRecordsMessageSender.class
 com/wordgame/gameserver/util/PlainWordProvider.class
 com/wordgame/gameserver/model/reqres/CreateGameResponse.class
