@@ -9,10 +9,10 @@
         <module name="web-ui" />
         <module name="records-storage" />
         <module name="game-server" />
-        <module name="common-models" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="common-models" target="15" />
       <module name="game-event-responder" target="15" />
     </bytecodeTargetLevel>
   </component>
