@@ -15,9 +15,9 @@ public class StandardGame extends Game {
 
     public StandardGame(String gameId, String nickname) {
         super(GameMode.STANDARD, gameId, nickname, INITIAL_TIME_MILLIS);
-       }
+    }
 
-   @Override
+    @Override
     protected void onProcessedWord(WordMatches wordMatches) {
         score += wordMatches.getMatchesCount() * wordMatches.getWord().length();
     }

@@ -1,7 +1,5 @@
 package com.wordgame.gameserver.model;
 
-import java.time.OffsetDateTime;
-
 public class GameRecord {
     private String gameId;
     private String nickname;

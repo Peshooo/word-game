@@ -18,6 +18,7 @@ com/wordgame/gameserver/service/gameplay/Position.class
 com/wordgame/gameserver/model/reqres/GameStateResponse.class
 com/wordgame/gameserver/model/SerializableDummyObject.class
 com/wordgame/gameserver/model/GameRecord.class
+com/wordgame/gameserver/service/GamesService.class
 com/wordgame/gameserver/util/WidthMeasurer.class
 com/wordgame/gameserver/service/manager/RedisGamesManager.class
 com/wordgame/gameserver/service/manager/RedisGameLockService.class
