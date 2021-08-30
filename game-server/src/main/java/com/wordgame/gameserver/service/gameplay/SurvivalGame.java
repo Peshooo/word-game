@@ -14,6 +14,7 @@ public class SurvivalGame extends Game {
     public SurvivalGame(String gameId, String nickname, GameStatus gameStatus, long score, long timeLeftMillis, List<Word> words, long lastUpdateTimestamp) {
         super(GameMode.SURVIVAL, gameId, nickname, gameStatus, score, timeLeftMillis, words, lastUpdateTimestamp);
     }
+
     public SurvivalGame(String gameId, String nickname) {
         super(GameMode.SURVIVAL, gameId, nickname, Math.min(MAXIMUM_TIME_MILLIS, INITIAL_TIME_MILLIS));
     }
