@@ -12,9 +12,11 @@ com/wordgame/gameserver/model/RedisGame.class
 com/wordgame/gameserver/util/WordFactory.class
 com/wordgame/gameserver/model/WordMatches.class
 com/wordgame/gameserver/model/Size.class
+com/wordgame/gameserver/service/RedisKeyExpiredListener.class
 com/wordgame/gameserver/model/GameMode.class
 com/wordgame/gameserver/service/gameplay/Position.class
 com/wordgame/gameserver/model/reqres/GameStateResponse.class
+com/wordgame/gameserver/model/SerializableDummyObject.class
 com/wordgame/gameserver/model/GameRecord.class
 com/wordgame/gameserver/util/WidthMeasurer.class
 com/wordgame/gameserver/service/manager/RedisGamesManager.class
