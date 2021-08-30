@@ -100,12 +100,12 @@
 
     <script>
         var stompClient = null;
+        var socket = new SockJS('http://localhost:8081/game-ws');
         var gameId = "";
 
         function generateGameId() {
             gameId = '<%= gameServerRestClient.createGame(gameMode, (String) request.getSession().getAttribute("nickname")) %>';
             console.log("Game id is " + gameId);
-                var socket = new SockJS('http://localhost:8081/game-ws');
                 stompClient = Stomp.over(socket);
                 stompClient.connect({}, function (frame) {
                         console.log('Connected: ' + frame);
@@ -157,6 +157,7 @@
 
     <script>
         function resetGame() {
+            stompClient.disconnect();
             clearInterval(getGameStateInterval);
             generateGameId();
             startIntervals();
@@ -177,7 +178,7 @@
         <div class = "user-controls">
             <input class = "user-input" type = "text" id = "userInput" placeholder = "Type words here">
             <div class = "time-left" id = "timer">60</div>
-            <button class = "reset-button" id = "resetButton" onclick="resetGame();">Reset</button>
+            <button class = "reset-button" id = "resetButton" onclick="location.reload()">Reset</button>
             <div class = "score-display" id = "score">Score: 0</div>
         </div>
 
