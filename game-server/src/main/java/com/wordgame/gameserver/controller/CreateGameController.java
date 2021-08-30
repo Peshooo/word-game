@@ -1,5 +1,6 @@
 package com.wordgame.gameserver.controller;
 
+import com.wordgame.gameserver.model.GameMode;
 import com.wordgame.gameserver.model.reqres.CreateGameResponse;
 import com.wordgame.gameserver.service.GamesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +19,12 @@ public class CreateGameController {
     @PostMapping("/standard")
     @ResponseBody
     public CreateGameResponse createStandardGame(@RequestParam String nickname) {
-        return gamesService.createStandardGame(nickname);
+        return gamesService.createGame(GameMode.STANDARD, nickname);
     }
 
     @PostMapping("/survival")
     @ResponseBody
     public CreateGameResponse createSurvivalGame(@RequestParam String nickname) {
-        return gamesService.createSurvivalGame(nickname);
+        return gamesService.createGame(GameMode.SURVIVAL, nickname);
     }
 }

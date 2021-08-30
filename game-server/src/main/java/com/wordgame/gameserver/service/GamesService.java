@@ -1,5 +1,6 @@
 package com.wordgame.gameserver.service;
 
+import com.wordgame.gameserver.model.GameMode;
 import com.wordgame.gameserver.model.GameRecord;
 import com.wordgame.gameserver.model.GameStatus;
 import com.wordgame.gameserver.model.reqres.CreateGameResponse;
@@ -23,21 +24,11 @@ public class GamesService {
     @Autowired
     private GameRecordsMessageSender gameRecordsMessageSender;
 
-    public CreateGameResponse createStandardGame(String nickname) {
-        String gameId = UUID.randomUUID().toString();
-        StandardGame standardGame = new StandardGame(gameId, nickname);
-        gamesManager.save(standardGame);
+    public CreateGameResponse createGame(GameMode gameMode, String nickname) {
+        Game game = GameFactory.create(gameMode, nickname);
+        gamesManager.save(game);
 
-        return new CreateGameResponse(standardGame.getGameId());
-    }
-
-    public CreateGameResponse createSurvivalGame(String nickname) {
-        String gameId = UUID.randomUUID().toString();
-
-        SurvivalGame survivalGame = new SurvivalGame(gameId, nickname);
-        gamesManager.save(survivalGame);
-
-        return new CreateGameResponse(survivalGame.getGameId());
+        return new CreateGameResponse(game.getGameId());
     }
 
     public GameStateResponse getGameState(String gameId) {
