@@ -23,7 +23,6 @@ public abstract class Game {
     protected final List<Word> words;
     protected long lastUpdateTimestamp;
 
-    //TODO: Builder
     public Game(GameMode gameMode, String gameId, String nickname, GameStatus gameStatus, long score, long timeLeftMillis, List<Word> words, long lastUpdateTimestamp) {
         this.gameMode = gameMode;
         this.gameId = gameId;

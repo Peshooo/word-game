@@ -1,5 +1,6 @@
 package com.wordgame.gameserver.service;
 
+import com.wordgame.gameserver.GameStateResponseTranslator;
 import com.wordgame.gameserver.model.GameMode;
 import com.wordgame.gameserver.model.GameRecord;
 import com.wordgame.gameserver.model.GameStatus;
@@ -35,7 +36,7 @@ public class GamesService {
         Game game = gamesManager.perform(gameId, this::updateGame);
         checkIfFinished(game);
 
-        return toGameStateResponse(game);
+        return GameStateResponseTranslator.translate(game);
     }
 
     private Game updateGame(String gameId, Game game) {
@@ -48,18 +49,6 @@ public class GamesService {
         if (game.getGameStatus() == GameStatus.FINISHED) {
             onGameFinished(game);
         }
-    }
-
-    //TODO: Create translator classes
-    private GameStateResponse toGameStateResponse(Game game) {
-        GameStateResponse gameStateResponse = new GameStateResponse();
-        gameStateResponse.setNickname(game.getNickname());
-        gameStateResponse.setStatus(game.getGameStatus());
-        gameStateResponse.setScore(game.getScore());
-        gameStateResponse.setTimeLeftMillis(game.getTimeLeftMillis());
-        gameStateResponse.setWords(game.getWords());
-
-        return gameStateResponse;
     }
 
     public void enterWord(String gameId, String word) {

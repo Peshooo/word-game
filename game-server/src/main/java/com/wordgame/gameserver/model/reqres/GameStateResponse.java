@@ -1,6 +1,7 @@
 package com.wordgame.gameserver.model.reqres;
 
 import com.wordgame.gameserver.model.GameStatus;
+import com.wordgame.gameserver.service.gameplay.Game;
 import com.wordgame.gameserver.service.gameplay.Word;
 
 import java.util.List;
@@ -11,6 +12,52 @@ public class GameStateResponse {
     private GameStatus status;
     private long timeLeftMillis;
     private List<Word> words;
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public static class Builder {
+        private final GameStateResponse gameStateResponse;
+
+        public Builder() {
+            gameStateResponse = new GameStateResponse();
+        }
+
+        public Builder nickname(String nickname) {
+            gameStateResponse.nickname = nickname;
+
+            return this;
+        }
+
+        public Builder score(long score) {
+            gameStateResponse.score = score;
+
+            return this;
+        }
+
+        public Builder status(GameStatus status) {
+            gameStateResponse.status = status;
+
+            return this;
+        }
+
+        public Builder timeLeftMillis(long timeLeftMillis) {
+            gameStateResponse.timeLeftMillis = timeLeftMillis;
+
+            return this;
+        }
+
+        public Builder words(List<Word> words) {
+            gameStateResponse.words = words;
+
+            return this;
+        }
+
+        public GameStateResponse build() {
+            return gameStateResponse;
+        }
+    }
 
     public String getNickname() {
         return nickname;
