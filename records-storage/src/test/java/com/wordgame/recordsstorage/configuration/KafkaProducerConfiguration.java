@@ -1,6 +1,7 @@
-package com.wordgame.gameserver.configuration;
+package com.wordgame.recordsstorage.configuration;
 
 import com.google.common.collect.ImmutableMap;
+import com.wordgame.recordsstorage.configuration.util.KafkaSender;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,6 +15,7 @@ import java.util.Map;
 
 @Configuration
 public class KafkaProducerConfiguration {
+
     @Bean
     public ProducerFactory<String, String> producerFactory(
             @Value("${kafka.bootstrap-servers}") String bootstrapServers) {
@@ -29,5 +31,10 @@ public class KafkaProducerConfiguration {
     @Bean
     public KafkaTemplate<String, String> kafkaTemplate(ProducerFactory<String, String> producerFactory) {
         return new KafkaTemplate<>(producerFactory);
+    }
+
+    @Bean
+    public KafkaSender kafkaSender(KafkaTemplate<String, String> kafkaTemplate) {
+        return new KafkaSender(kafkaTemplate);
     }
 }

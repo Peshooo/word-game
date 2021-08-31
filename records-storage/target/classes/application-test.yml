@@ -1,0 +1,4 @@
+kafka:
+  host: localhost
+  port: 9090
+  bootstrap-servers: "${kafka.host}:${kafka.port}"
