@@ -1,7 +1,6 @@
 package com.wordgame.recordsstorage.listener;
 
 import com.wordgame.recordsstorage.model.GameRecordMessage;
-import com.wordgame.recordsstorage.model.StandardGameRecord;
 import com.wordgame.recordsstorage.service.StandardGameRecordsMessageHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;

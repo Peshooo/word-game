@@ -1,6 +1,5 @@
 package com.wordgame.recordsstorage.service;
 
-import com.wordgame.recordsstorage.model.GameRecord;
 import com.wordgame.recordsstorage.model.GameRecordMessage;
 import com.wordgame.recordsstorage.model.StandardGameRecord;
 import com.wordgame.recordsstorage.model.SurvivalGameRecord;

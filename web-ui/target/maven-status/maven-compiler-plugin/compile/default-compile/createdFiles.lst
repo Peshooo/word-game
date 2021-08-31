@@ -1,10 +1,11 @@
-com/wordgame/webui/service/RecordsStorageRestClient.class
-com/wordgame/webui/filter/NicknameFilter.class
-com/wordgame/webui/Application.class
-com/wordgame/webui/model/GameRecordsResponse.class
-com/wordgame/webui/configuration/RestTemplateConfiguration.class
 com/wordgame/webui/service/GameServerRestClient.class
 com/wordgame/webui/model/CreateGameResponse.class
 com/wordgame/webui/model/GameRecord.class
 com/wordgame/webui/configuration/WebMvcConfiguration.class
 com/wordgame/webui/controller/WebMvcController.class
+com/wordgame/webui/service/RecordsStorageRestClient.class
+com/wordgame/webui/filter/NicknameFilter.class
+com/wordgame/webui/Application.class
+com/wordgame/webui/model/GameRecordsResponse.class
+com/wordgame/webui/configuration/RestTemplateConfiguration.class
+com/wordgame/webui/configuration/SchedulingConfiguration.class
