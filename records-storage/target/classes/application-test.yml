@@ -1,4 +1,9 @@
 kafka:
   host: localhost
-  port: 9090
+  port: 9092
   bootstrap-servers: "${kafka.host}:${kafka.port}"
+  topics:
+    survival-game-records:
+      partitions: 2
+    standard-game-records:
+      partitions: 2

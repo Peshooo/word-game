@@ -4,12 +4,17 @@ import com.wordgame.recordsstorage.configuration.KafkaTestConfiguration;
 import com.wordgame.recordsstorage.configuration.util.KafkaSender;
 import com.wordgame.recordsstorage.configuration.util.MessageHandlerAwaitUtility;
 import com.wordgame.recordsstorage.model.GameRecordMessage;
+import com.wordgame.recordsstorage.repository.GameRecordsRepository;
+import com.wordgame.recordsstorage.service.StandardGameRecordsMessageHandler;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.kafka.config.KafkaListenerEndpointRegistry;
 import org.springframework.kafka.listener.MessageListenerContainer;
 import org.springframework.kafka.test.EmbeddedKafkaBroker;
@@ -17,14 +22,17 @@ import org.springframework.kafka.test.context.EmbeddedKafka;
 import org.springframework.kafka.test.utils.ContainerTestUtils;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.swing.*;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-@SpringBootTest(classes = {KafkaTestConfiguration.class})
+@SpringBootTest(classes = {KafkaTestConfiguration.class, StandardGameRecordsMessageListener.class, SurvivalGameRecordsMessageListener.class})
 @ActiveProfiles("test")
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 @RunWith(SpringRunner.class)
@@ -44,6 +52,15 @@ public class StandardGameRecordsListenerTest {
 
     @Autowired
     private KafkaSender kafkaSender;
+
+    @MockBean
+    private GameRecordsRepository gameRecordsRepository;
+
+    @Autowired
+    private StandardGameRecordsMessageHandler standardGameRecordsMessageHandlerMock;
+
+    @Autowired
+    private SurvivalGameRecordsMessageListener survivalGameRecordsMessageHandlerMock;
 
     @Value("${kafka.topics.standard-game-records-topic.name}")
     private String standardRecordsTopic;
@@ -70,7 +87,7 @@ public class StandardGameRecordsListenerTest {
 
     private void testGameRecordMessageReceived(String topic) {
         messageHandlerAwaitUtility.prepare(1);
-        kafkaSender.send(topic, GAME_RECORD_MESSAGE);
+       // kafkaSender.send(topic, GAME_RECORD_MESSAGE);
         messageHandlerAwaitUtility.await();
         List<GameRecordMessage> invocationHistory = messageHandlerAwaitUtility.getInvocationHistory();
         assertEquals(1, invocationHistory.size());

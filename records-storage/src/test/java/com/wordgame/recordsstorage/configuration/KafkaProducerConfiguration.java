@@ -10,6 +10,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
+import org.springframework.kafka.test.EmbeddedKafkaBroker;
+import org.springframework.kafka.test.utils.KafkaTestUtils;
 
 import java.util.Map;
 
@@ -18,12 +20,10 @@ public class KafkaProducerConfiguration {
 
     @Bean
     public ProducerFactory<String, String> producerFactory(
-            @Value("${kafka.bootstrap-servers}") String bootstrapServers) {
-        Map<String, Object> configuration = ImmutableMap.<String, Object>builder()
-                .put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers)
-                .put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class)
-                .put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class)
-                .build();
+            EmbeddedKafkaBroker embeddedKafkaBroker) {
+        Map<String, Object> configuration = KafkaTestUtils.producerProps(embeddedKafkaBroker);
+        configuration.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        configuration.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
 
         return new DefaultKafkaProducerFactory<>(configuration);
     }
