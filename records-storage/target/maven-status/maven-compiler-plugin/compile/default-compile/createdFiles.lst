@@ -14,6 +14,7 @@ com/wordgame/recordsstorage/model/GameRecordMessage.class
 com/wordgame/recordsstorage/listener/GameRecordsMessageListener.class
 com/wordgame/recordsstorage/service/AbstractGameRecordsMessageHandler.class
 com/wordgame/recordsstorage/model/SurvivalGameRecord.class
+com/wordgame/recordsstorage/configuration/SchedulingConfiguration.class
 com/wordgame/recordsstorage/service/GameRecordsMessageHandler.class
 com/wordgame/recordsstorage/Application.class
 com/wordgame/recordsstorage/model/StandardGameRecord.class
