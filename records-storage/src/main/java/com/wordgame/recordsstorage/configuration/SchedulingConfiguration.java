@@ -1,4 +1,4 @@
-package com.wordgame.webui.configuration;
+package com.wordgame.recordsstorage.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
