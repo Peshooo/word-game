@@ -8,10 +8,11 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SurvivalGameRecordsMessageListener {
+public class SurvivalGameRecordsMessageListener implements GameRecordsMessageListener {
     @Autowired
     private SurvivalGameRecordsMessageHandler survivalGameRecordsMessageHandler;
 
+    @Override
     @KafkaListener(
             topics = "${kafka.topics.survival-game-records.name}",
             groupId = "${kafka.topics.survival-game-records.consumer-group}",

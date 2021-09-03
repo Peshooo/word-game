@@ -1,5 +1,6 @@
-package com.wordgame.recordsstorage;
+package com.wordgame.recordsstorage.service;
 
+import com.wordgame.recordsstorage.model.GameRecord;
 import com.wordgame.recordsstorage.model.GameRecordsResponse;
 import com.wordgame.recordsstorage.model.StandardGameRecord;
 import com.wordgame.recordsstorage.model.SurvivalGameRecord;
@@ -17,12 +18,8 @@ public class GameRecordsService {
     @Autowired
     private GameRecordsRepository gameRecordsRepository;
 
-    public void saveStandardRecord(StandardGameRecord standardGameRecord) {
-
-    }
-
-    public void saveSurvivalRecord(SurvivalGameRecord survivalGameRecord) {
-
+    public void save(GameRecord gameRecord) {
+        gameRecordsRepository.save(gameRecord);
     }
 
     public GameRecordsResponse getTopFiveGameRecordsLastDay() {
@@ -36,6 +33,5 @@ public class GameRecordsService {
     public void deleteOldRecords() {
         gameRecordsRepository.deleteOldStandardRecords();
         gameRecordsRepository.deleteOldSurvivalRecords();
-        ;
     }
 }
