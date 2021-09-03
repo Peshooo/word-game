@@ -1,7 +1,6 @@
 package com.wordgame.gameserver.configuration;
 
 import com.wordgame.gameserver.model.RedisGame;
-import com.wordgame.gameserver.service.gameplay.Game;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,6 +16,7 @@ import org.springframework.data.redis.support.collections.RedisMap;
 @Configuration
 public class RedisConfiguration {
     private static final String GAMES_HASH_NAME = "games";
+
     @Bean
     public RedisStandaloneConfiguration redisStandaloneConfiguration(
             @Value("${redis.host}") String host,

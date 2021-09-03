@@ -7,15 +7,12 @@ import com.wordgame.gameserver.model.GameStatus;
 import com.wordgame.gameserver.model.reqres.CreateGameResponse;
 import com.wordgame.gameserver.model.reqres.GameStateResponse;
 import com.wordgame.gameserver.service.gameplay.Game;
-import com.wordgame.gameserver.service.gameplay.StandardGame;
-import com.wordgame.gameserver.service.gameplay.SurvivalGame;
 import com.wordgame.gameserver.service.kafka.GameRecordsMessageSender;
 import com.wordgame.gameserver.service.manager.GamesManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
-import java.util.UUID;
 
 @Service
 public class GamesService {

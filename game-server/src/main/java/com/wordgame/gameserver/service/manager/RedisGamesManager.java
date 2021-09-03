@@ -4,7 +4,6 @@ import com.wordgame.gameserver.model.RedisGame;
 import com.wordgame.gameserver.service.RedisGameTranslator;
 import com.wordgame.gameserver.service.gameplay.Game;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.BoundValueOperations;
 import org.springframework.data.redis.support.collections.RedisMap;
 import org.springframework.stereotype.Service;
 

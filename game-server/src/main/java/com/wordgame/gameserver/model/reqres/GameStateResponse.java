@@ -1,7 +1,6 @@
 package com.wordgame.gameserver.model.reqres;
 
 import com.wordgame.gameserver.model.GameStatus;
-import com.wordgame.gameserver.service.gameplay.Game;
 import com.wordgame.gameserver.service.gameplay.Word;
 
 import java.util.List;
