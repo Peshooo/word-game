@@ -1,21 +1,19 @@
 package com.wordgame.recordsstorage.model;
 
 import java.util.List;
+import java.util.Map;
 
 public class GameRecordsResponse {
-    private List<? extends GameRecord> standardGameRecords;
-    private List<? extends GameRecord> survivalGameRecords;
+    private Map<String, List<GameRecord>> gameRecordsByGameMode;
 
-    public GameRecordsResponse(List<? extends GameRecord> standardGameRecords, List<? extends GameRecord> survivalGameRecords) {
-        this.standardGameRecords = standardGameRecords;
-        this.survivalGameRecords = survivalGameRecords;
+    public GameRecordsResponse() {
     }
 
-    public List<? extends GameRecord> getStandardGameRecords() {
-        return standardGameRecords;
+    public GameRecordsResponse(Map<String, List<GameRecord>> gameRecordsByGameMode) {
+        this.gameRecordsByGameMode = gameRecordsByGameMode;
     }
 
-    public List<? extends GameRecord> getSurvivalGameRecords() {
-        return survivalGameRecords;
+    public Map<String, List<GameRecord>> getGameRecordsByGameMode() {
+        return gameRecordsByGameMode;
     }
 }
