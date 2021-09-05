@@ -1,19 +1,10 @@
 package com.wordgame.recordsstorage.model;
 
-import org.springframework.data.annotation.PersistenceConstructor;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import java.time.OffsetDateTime;
+import java.util.Objects;
 
-@Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class GameRecord {
-    @Id
     private String gameId;
-
     private String nickname;
     private Long score;
     private OffsetDateTime createdAt;
@@ -21,7 +12,6 @@ public class GameRecord {
     public GameRecord() {
     }
 
-    @PersistenceConstructor
     public GameRecord(String gameId, String nickname, Long score, OffsetDateTime createdAt) {
         this.gameId = gameId;
         this.nickname = nickname;
@@ -43,5 +33,34 @@ public class GameRecord {
 
     public OffsetDateTime getCreatedAt() {
         return createdAt;
+    }
+
+    public void setGameId(String gameId) {
+        this.gameId = gameId;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public void setScore(Long score) {
+        this.score = score;
+    }
+
+    public void setCreatedAt(OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        GameRecord that = (GameRecord) o;
+        return Objects.equals(gameId, that.gameId) && Objects.equals(nickname, that.nickname) && Objects.equals(score, that.score) && createdAt.isEqual(that.createdAt);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(gameId, nickname, score, createdAt.toInstant().toEpochMilli());
     }
 }

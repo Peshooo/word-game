@@ -1,24 +1,19 @@
 package com.wordgame.webui.model;
 
 import java.util.List;
+import java.util.Map;
 
 public class GameRecordsResponse {
-    private List<GameRecord> standardGameRecords;
-    private List<GameRecord> survivalGameRecords;
+    private Map<String, List<GameRecord>> gameRecordsByGameMode;
 
     public GameRecordsResponse() {
     }
 
-    public GameRecordsResponse(List<GameRecord> standardGameRecords, List<GameRecord> survivalGameRecords) {
-        this.standardGameRecords = standardGameRecords;
-        this.survivalGameRecords = survivalGameRecords;
+    public GameRecordsResponse(Map<String, List<GameRecord>> gameRecordsByGameMode) {
+        this.gameRecordsByGameMode = gameRecordsByGameMode;
     }
 
-    public List<GameRecord> getStandardGameRecords() {
-        return standardGameRecords;
-    }
-
-    public List<GameRecord> getSurvivalGameRecords() {
-        return survivalGameRecords;
+    public Map<String, List<GameRecord>> getGameRecordsByGameMode() {
+        return gameRecordsByGameMode;
     }
 }

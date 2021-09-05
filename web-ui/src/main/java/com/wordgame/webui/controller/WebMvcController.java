@@ -26,8 +26,8 @@ public class WebMvcController {
     @RequestMapping("/")
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
         GameRecordsResponse gameRecordsResponse = recordsStorageRestClient.getGameRecords();
-        List<GameRecord> standardTopFive = gameRecordsResponse.getStandardGameRecords();
-        List<GameRecord> survivalTopFive = gameRecordsResponse.getSurvivalGameRecords();
+        List<GameRecord> standardTopFive = gameRecordsResponse.getGameRecordsByGameMode().get("standard"); //Ugly but it's kinda client-side code so at least some ugliness is required.
+        List<GameRecord> survivalTopFive = gameRecordsResponse.getGameRecordsByGameMode().get("survival"); //Ugly but it's kinda client-side code so at least some ugliness is required.
 
         Map<String, Object> context =
                 ImmutableMap.<String, Object>builder()
