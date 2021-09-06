@@ -1,5 +1,7 @@
 package com.wordgame.recordsstorage.model;
 
+import java.util.Objects;
+
 public class GameRecordMessage {
     private String gameId;
     private String nickname;
@@ -46,5 +48,18 @@ public class GameRecordMessage {
 
     public long getCreatedAt() {
         return createdAt;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        GameRecordMessage message = (GameRecordMessage) o;
+        return score == message.score && createdAt == message.createdAt && Objects.equals(gameId, message.gameId) && Objects.equals(nickname, message.nickname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(gameId, nickname, score, createdAt);
     }
 }
