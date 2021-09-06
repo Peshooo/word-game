@@ -1,8 +1,7 @@
-package com.wordgame.recordsstorage.handler;
+package com.wordgame.recordsstorage.service.handler;
 
 import com.wordgame.recordsstorage.model.GameRecord;
 import com.wordgame.recordsstorage.model.GameRecordMessage;
-import com.wordgame.recordsstorage.service.handler.GameRecordMessageTranslator;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
