@@ -1,23 +1,16 @@
 package com.wordgame.recordsstorage.listener;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wordgame.recordsstorage.configuration.*;
 import com.wordgame.recordsstorage.model.GameRecordMessage;
 import com.wordgame.recordsstorage.service.handler.GameRecordsMessageHandler;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
-import org.mockito.invocation.InvocationOnMock;
-import org.mockito.stubbing.Answer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.kafka.config.KafkaListenerEndpointRegistry;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.listener.MessageListenerContainer;
 import org.springframework.kafka.test.EmbeddedKafkaBroker;
 import org.springframework.kafka.test.context.EmbeddedKafka;
@@ -40,8 +33,8 @@ import static org.junit.Assert.assertTrue;
         StandardGameRecordsMessageListener.class,
         SurvivalGameRecordsMessageListener.class})
 @EmbeddedKafka(
-        brokerProperties = { "listeners=PLAINTEXT://${kafka.bootstrap-servers}", "port=${kafka.port}" },
-        topics = { "${kafka.topics.standard-game-records.name}", "${kafka.topics.survival-game-records.name}" })
+        brokerProperties = {"listeners=PLAINTEXT://${kafka.bootstrap-servers}", "port=${kafka.port}"},
+        topics = {"${kafka.topics.standard-game-records.name}", "${kafka.topics.survival-game-records.name}"})
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 @RunWith(SpringRunner.class)
 public class GameRecordsMessageListenersTest {
@@ -88,9 +81,9 @@ public class GameRecordsMessageListenersTest {
 
         assertEquals(gameModes.size(), invocationHistory.size());
         gameModes.forEach(gameMode -> {
-           List<GameRecordMessage> invocationHistoryForGameMode = invocationHistory.get(gameMode);
-           assertEquals(1, invocationHistoryForGameMode.size());
-           assertTrue(invocationHistoryForGameMode.contains(GAME_RECORD_MESSAGE));
+            List<GameRecordMessage> invocationHistoryForGameMode = invocationHistory.get(gameMode);
+            assertEquals(1, invocationHistoryForGameMode.size());
+            assertTrue(invocationHistoryForGameMode.contains(GAME_RECORD_MESSAGE));
         });
     }
 }

@@ -3,7 +3,6 @@ package com.wordgame.recordsstorage.configuration;
 import com.wordgame.recordsstorage.model.GameRecordMessage;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
