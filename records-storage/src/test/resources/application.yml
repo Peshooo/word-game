@@ -1,0 +1,14 @@
+kafka:
+  topic-format: "%s-game-records"
+  host: localhost
+  port: 9092
+  bootstrap-servers: "${kafka.host}:${kafka.port}"
+  topics:
+    standard-game-records:
+      name: standard-game-records
+      replication-factor: 1
+      partitions: 2
+    survival-game-records:
+      name: survival-game-records
+      replication-factor: 1
+      partitions: 2
