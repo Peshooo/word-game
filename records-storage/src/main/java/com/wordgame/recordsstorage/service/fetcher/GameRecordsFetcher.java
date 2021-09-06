@@ -4,7 +4,7 @@ import com.wordgame.recordsstorage.configuration.Constants;
 import com.wordgame.recordsstorage.model.GameRecord;
 import com.wordgame.recordsstorage.model.GameRecordsResponse;
 import com.wordgame.recordsstorage.model.SqlParameterQuery;
-import com.wordgame.recordsstorage.repository.GameRecordsJdbcRepository;
+import com.wordgame.recordsstorage.repository.GameRecordsRepository;
 import com.wordgame.recordsstorage.repository.SqlParameterQueryCreator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 @Service
 public class GameRecordsFetcher {
     @Autowired
-    private GameRecordsJdbcRepository gameRecordsJdbcRepository;
+    private GameRecordsRepository gameRecordsRepository;
 
     @Autowired
     private List<String> gameModes;
@@ -46,6 +46,6 @@ public class GameRecordsFetcher {
     private List<GameRecord> fetchGameRecords(String gameMode, OffsetDateTime createdAtThreshold, int limit) {
         SqlParameterQuery getRecordsQuery = SqlParameterQueryCreator.getTopXAfterQuery(gameMode, createdAtThreshold, limit);
 
-        return gameRecordsJdbcRepository.get(getRecordsQuery);
+        return gameRecordsRepository.get(getRecordsQuery);
     }
 }

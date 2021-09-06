@@ -71,7 +71,7 @@ public class SqlParameterQueryCreator {
         String query = String.format(DELETE_OLD_RECORDS_QUERY_FORMAT, tableName);
         Map<String, Object> parameters = buildDeleteOldRecordsQueryParameters(createdAtThreshold);
 
-        return new SqlParameterQuery(tableName, parameters);
+        return new SqlParameterQuery(query, parameters);
     }
 
     private static Map<String, Object> buildDeleteOldRecordsQueryParameters(OffsetDateTime createdAtThreshold) {
