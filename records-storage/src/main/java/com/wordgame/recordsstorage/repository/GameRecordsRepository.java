@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class GameRecordsJdbcRepository {
+public class GameRecordsRepository {
     private static final BeanPropertyRowMapper<GameRecord> ROW_MAPPER = new BeanPropertyRowMapper<>(GameRecord.class);
 
     @Autowired
