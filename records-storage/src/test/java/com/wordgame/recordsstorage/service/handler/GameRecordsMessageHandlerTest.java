@@ -3,7 +3,6 @@ package com.wordgame.recordsstorage.service.handler;
 import com.wordgame.recordsstorage.configuration.GameModesConfiguration;
 import com.wordgame.recordsstorage.model.GameRecord;
 import com.wordgame.recordsstorage.model.GameRecordMessage;
-import com.wordgame.recordsstorage.repository.GameRecordsRepository;
 import com.wordgame.recordsstorage.service.persister.GameRecordsPersister;
 import org.junit.Test;
 import org.junit.runner.RunWith;

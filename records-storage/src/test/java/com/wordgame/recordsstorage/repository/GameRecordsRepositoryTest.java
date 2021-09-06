@@ -1,8 +1,6 @@
 package com.wordgame.recordsstorage.repository;
 
-import com.google.common.collect.ImmutableList;
 import com.wordgame.recordsstorage.configuration.FlywayUtility;
-import com.wordgame.recordsstorage.configuration.GameModesConfiguration;
 import com.wordgame.recordsstorage.configuration.RepositoryConfiguration;
 import com.wordgame.recordsstorage.model.GameRecord;
 import com.wordgame.recordsstorage.model.SqlParameterQuery;
@@ -18,7 +16,6 @@ import java.time.OffsetDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
