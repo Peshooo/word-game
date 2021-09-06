@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="1" failures="0" name="com.wordgame.recordsstorage.repository.GameRecordsJdbcRepositoryTest" time="0.463" errors="1" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="java.vm.version" value="11.0.11+9-Ubuntu-0ubuntu2.20.04"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/pesho/Documents/Projects/word-game/records-storage"/>
+    <property name="java.vm.vendor" value="Ubuntu"/>
+    <property name="java.vendor.url" value="https://ubuntu.com/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/pesho/Documents/Projects/word-game/records-storage"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.runtime.version" value="11.0.11+9-Ubuntu-0ubuntu2.20.04"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="55.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="5.4.0-58-generic"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/home/pesho"/>
+    <property name="user.timezone" value="Europe/Sofia"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="user.name" value="pesho"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install -am"/>
+    <property name="java.home" value="/usr/lib/jvm/java-11-openjdk-amd64"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="11.0.11"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="java.vendor" value="Ubuntu"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.version.date" value="2021-04-20"/>
+    <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-lts"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="com.wordgame.recordsstorage.repository.GameRecordsJdbcRepositoryTest" name="testSave" time="0.463">
+    <error message="PreparedStatementCallback; SQL [INSERT INTO standard_records ( game_id, nickname, score, created_at ) VALUES ( ?, ?, ?, ? )]; Cannot parse &quot;TIMESTAMP&quot; constant &quot;aced00057372000d6a6176612e74696d652e536572955d84ba1b2248b20c00007870770f0a000007e509050f00140683bd680c78&quot;; SQL statement:
+INSERT INTO standard_records ( game_id, nickname, score, created_at ) VALUES ( ?, ?, ?, ? ) -- (?1, ?2, ?3, ?4) [22007-192]; nested exception is org.h2.jdbc.JdbcSQLException: Cannot parse &quot;TIMESTAMP&quot; constant &quot;aced00057372000d6a6176612e74696d652e536572955d84ba1b2248b20c00007870770f0a000007e509050f00140683bd680c78&quot;; SQL statement:
+INSERT INTO standard_records ( game_id, nickname, score, created_at ) VALUES ( ?, ?, ?, ? ) -- (?1, ?2, ?3, ?4) [22007-192]" type="org.springframework.dao.DataIntegrityViolationException">org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; SQL [INSERT INTO standard_records ( game_id, nickname, score, created_at ) VALUES ( ?, ?, ?, ? )]; Cannot parse &quot;TIMESTAMP&quot; constant &quot;aced00057372000d6a6176612e74696d652e536572955d84ba1b2248b20c00007870770f0a000007e509050f00140683bd680c78&quot;; SQL statement:
+INSERT INTO standard_records ( game_id, nickname, score, created_at ) VALUES ( ?, ?, ?, ? ) -- (?1, ?2, ?3, ?4) [22007-192]; nested exception is org.h2.jdbc.JdbcSQLException: Cannot parse &quot;TIMESTAMP&quot; constant &quot;aced00057372000d6a6176612e74696d652e536572955d84ba1b2248b20c00007870770f0a000007e509050f00140683bd680c78&quot;; SQL statement:
+INSERT INTO standard_records ( game_id, nickname, score, created_at ) VALUES ( ?, ?, ?, ? ) -- (?1, ?2, ?3, ?4) [22007-192]
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:104)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:79)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:79)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:981)
+	at org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate.update(NamedParameterJdbcTemplate.java:328)
+	at org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate.update(NamedParameterJdbcTemplate.java:333)
+	at com.wordgame.recordsstorage.repository.GameRecordsJdbcRepository.save(GameRecordsJdbcRepository.java:37)
+	at com.wordgame.recordsstorage.repository.GameRecordsJdbcRepositoryTest.testSave(GameRecordsJdbcRepositoryTest.java:46)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: org.h2.jdbc.JdbcSQLException: Cannot parse &quot;TIMESTAMP&quot; constant &quot;aced00057372000d6a6176612e74696d652e536572955d84ba1b2248b20c00007870770f0a000007e509050f00140683bd680c78&quot;; SQL statement:
+INSERT INTO standard_records ( game_id, nickname, score, created_at ) VALUES ( ?, ?, ?, ? ) -- (?1, ?2, ?3, ?4) [22007-192]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:122)
+	at org.h2.value.Value.convertTo(Value.java:967)
+	at org.h2.table.Column.convert(Column.java:149)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:143)
+	at org.h2.command.dml.Insert.update(Insert.java:114)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:98)
+	at org.h2.command.Command.executeUpdate(Command.java:258)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:160)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:146)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	... 45 more
+Caused by: java.lang.IllegalArgumentException: aced00057372000d6a6176612e74696d652e536572955d84ba1b2248b20c00007870770f0a000007e509050f00140683bd680c78
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:305)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:140)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:120)
+	... 55 more
+</error>
+    <system-out>15:00:18.805 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.wordgame.recordsstorage.repository.GameRecordsJdbcRepositoryTest]
+15:00:18.809 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+15:00:18.817 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+15:00:18.859 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.wordgame.recordsstorage.repository.GameRecordsJdbcRepositoryTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+15:00:18.870 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.wordgame.recordsstorage.repository.GameRecordsJdbcRepositoryTest], using SpringBootContextLoader
+15:00:18.873 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.wordgame.recordsstorage.repository.GameRecordsJdbcRepositoryTest]: class path resource [com/wordgame/recordsstorage/repository/GameRecordsJdbcRepositoryTest-context.xml] does not exist
+15:00:18.874 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.wordgame.recordsstorage.repository.GameRecordsJdbcRepositoryTest]: class path resource [com/wordgame/recordsstorage/repository/GameRecordsJdbcRepositoryTestContext.groovy] does not exist
+15:00:18.874 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.wordgame.recordsstorage.repository.GameRecordsJdbcRepositoryTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+15:00:18.922 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an &apos;annotation declaring class&apos; for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.wordgame.recordsstorage.repository.GameRecordsJdbcRepositoryTest]
+15:00:18.999 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.wordgame.recordsstorage.repository.GameRecordsJdbcRepositoryTest]: using defaults.
+15:00:18.999 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+15:00:19.013 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@429bffaa, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5403f35f, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@483f6d77, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7e5afaa6, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@63a12c68, org.springframework.test.context.support.DirtiesContextTestExecutionListener@28f3b248, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1b1426f4, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@32b260fa, org.springframework.test.context.event.EventPublishingTestExecutionListener@581ac8a8, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6d4e5011, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@57d7f8ca, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@76c3e77a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@78123e82, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@67c33749, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@fba92d3]
+15:00:19.014 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.wordgame.recordsstorage.repository.GameRecordsJdbcRepositoryTest]
+15:00:19.016 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.wordgame.recordsstorage.repository.GameRecordsJdbcRepositoryTest]
+15:00:19.017 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.wordgame.recordsstorage.repository.GameRecordsJdbcRepositoryTest]
+15:00:19.017 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.wordgame.recordsstorage.repository.GameRecordsJdbcRepositoryTest]
+15:00:19.022 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@1e04fa0a testClass = GameRecordsJdbcRepositoryTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@1af2d44a testClass = GameRecordsJdbcRepositoryTest, locations = &apos;{}&apos;, classes = &apos;{class com.wordgame.recordsstorage.configuration.RepositoryConfiguration, class com.wordgame.recordsstorage.repository.GameRecordsJdbcRepository}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}&apos;, contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@ec756bd, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@222114ba, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@309e345f, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@6dbb137d, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@670002, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@6b67034], resourceBasePath = &apos;src/main/webapp&apos;, contextLoader = &apos;org.springframework.boot.test.context.SpringBootContextLoader&apos;, parent = [null]], attributes = map[&apos;org.springframework.test.context.web.ServletTestExecutionListener.activateListener&apos; -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
+15:00:19.023 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.wordgame.recordsstorage.repository.GameRecordsJdbcRepositoryTest]
+15:00:19.023 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.wordgame.recordsstorage.repository.GameRecordsJdbcRepositoryTest]
+15:00:19.045 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+
+  .   ____          _            __ _ _
+ /\\ / ___&apos;_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | &apos;_ | &apos;_| | &apos;_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  &apos;  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.5.4)
+
+2021-09-05 15:00:19.343  INFO 18645 --- [           main] c.w.r.r.GameRecordsJdbcRepositoryTest    : Starting GameRecordsJdbcRepositoryTest using Java 11.0.11 on pesho-Lenovo-IdeaPad-S540-15IML with PID 18645 (started by pesho in /home/pesho/Documents/Projects/word-game/records-storage)
+2021-09-05 15:00:19.346  INFO 18645 --- [           main] c.w.r.r.GameRecordsJdbcRepositoryTest    : No active profile set, falling back to default profiles: default
+2021-09-05 15:00:19.574  INFO 18645 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url=&apos;jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false&apos;, username=&apos;sa&apos;
+2021-09-05 15:00:19.733  INFO 18645 --- [           main] c.w.r.r.GameRecordsJdbcRepositoryTest    : Started GameRecordsJdbcRepositoryTest in 0.681 seconds (JVM running for 1.264)
+2021-09-05 15:00:19.989  INFO 18645 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 7.14.0 by Redgate
+2021-09-05 15:00:19.990  INFO 18645 --- [           main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:h2:mem:testdb (H2 1.4)
+2021-09-05 15:00:20.028  INFO 18645 --- [           main] o.f.core.internal.command.DbClean        : Successfully dropped pre-schema database level objects (execution time 00:00.000s)
+2021-09-05 15:00:20.031  INFO 18645 --- [           main] o.f.core.internal.command.DbClean        : Successfully cleaned schema &quot;PUBLIC&quot; (execution time 00:00.002s)
+2021-09-05 15:00:20.031  INFO 18645 --- [           main] o.f.core.internal.command.DbClean        : Successfully dropped post-schema database level objects (execution time 00:00.000s)
+2021-09-05 15:00:20.035  INFO 18645 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 7.14.0 by Redgate
+2021-09-05 15:00:20.035  INFO 18645 --- [           main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:h2:mem:testdb (H2 1.4)
+2021-09-05 15:00:20.050  INFO 18645 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.009s)
+2021-09-05 15:00:20.056  INFO 18645 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table &quot;PUBLIC&quot;.&quot;flyway_schema_history&quot; ...
+2021-09-05 15:00:20.081  INFO 18645 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema &quot;PUBLIC&quot;: &lt;&lt; Empty Schema &gt;&gt;
+2021-09-05 15:00:20.088  INFO 18645 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version &quot;001 - standard and survival records tables&quot;
+2021-09-05 15:00:20.104  INFO 18645 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema &quot;PUBLIC&quot;, now at version v001 (execution time 00:00.025s)
+2021-09-05 15:00:20.205  INFO 18645 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 7.14.0 by Redgate
+2021-09-05 15:00:20.205  INFO 18645 --- [           main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:h2:mem:testdb (H2 1.4)
+2021-09-05 15:00:20.209  INFO 18645 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.001s)
+2021-09-05 15:00:20.212  INFO 18645 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema &quot;PUBLIC&quot;: 001
+2021-09-05 15:00:20.213  INFO 18645 --- [           main] o.f.core.internal.command.DbMigrate      : Schema &quot;PUBLIC&quot; is up to date. No migration necessary.
+</system-out>
+  </testcase>
+</testsuite>
