@@ -1,4 +1,4 @@
-package com.wordgame.recordsstorage.handler;
+package com.wordgame.recordsstorage.service.handler;
 
 import com.wordgame.recordsstorage.model.GameRecord;
 import com.wordgame.recordsstorage.model.GameRecordMessage;

@@ -25,7 +25,7 @@ import java.util.stream.IntStream;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-@SpringBootTest(classes = {GameModesConfiguration.class, RepositoryConfiguration.class, GameRecordsRepository.class})
+@SpringBootTest(classes = {RepositoryConfiguration.class, GameRecordsRepository.class})
 @RunWith(SpringRunner.class)
 public class GameRecordsRepositoryTest {
     private static final int GAME_RECORDS_PER_GAME_MODE = 10;
