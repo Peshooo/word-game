@@ -7,5 +7,4 @@
 /home/pesho/Documents/Projects/word-game/web-ui/src/main/java/com/wordgame/webui/model/CreateGameResponse.java
 /home/pesho/Documents/Projects/word-game/web-ui/src/main/java/com/wordgame/webui/service/GameServerRestClient.java
 /home/pesho/Documents/Projects/word-game/web-ui/src/main/java/com/wordgame/webui/model/GameRecordsResponse.java
-/home/pesho/Documents/Projects/word-game/web-ui/src/main/java/com/wordgame/webui/configuration/SchedulingConfiguration.java
 /home/pesho/Documents/Projects/word-game/web-ui/src/main/java/com/wordgame/webui/configuration/WebMvcConfiguration.java

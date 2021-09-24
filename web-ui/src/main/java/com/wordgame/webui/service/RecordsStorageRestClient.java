@@ -1,6 +1,7 @@
 package com.wordgame.webui.service;
 
 import com.wordgame.webui.model.GameRecordsResponse;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

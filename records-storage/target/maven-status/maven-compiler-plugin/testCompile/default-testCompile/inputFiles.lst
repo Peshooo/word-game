@@ -1,2 +1,13 @@
-/home/pesho/Documents/Projects/word-game/records-storage/src/test/java/com/wordgame/recordsstorage/configuration/RepositoryConfiguration.java
+/home/pesho/Documents/Projects/word-game/records-storage/src/test/java/com/wordgame/recordsstorage/service/deleter/OldGameRecordsDeleterTest.java
+/home/pesho/Documents/Projects/word-game/records-storage/src/test/java/com/wordgame/recordsstorage/service/handler/GameRecordMessageTranslatorTest.java
+/home/pesho/Documents/Projects/word-game/records-storage/src/test/java/com/wordgame/recordsstorage/listener/GameRecordsMessageListenersTest.java
 /home/pesho/Documents/Projects/word-game/records-storage/src/test/java/com/wordgame/recordsstorage/configuration/FlywayUtility.java
+/home/pesho/Documents/Projects/word-game/records-storage/src/test/java/com/wordgame/recordsstorage/service/handler/GameRecordsMessageHandlerTest.java
+/home/pesho/Documents/Projects/word-game/records-storage/src/test/java/com/wordgame/recordsstorage/configuration/MessageHandlerAwaitUtility.java
+/home/pesho/Documents/Projects/word-game/records-storage/src/test/java/com/wordgame/recordsstorage/configuration/KafkaSender.java
+/home/pesho/Documents/Projects/word-game/records-storage/src/test/java/com/wordgame/recordsstorage/configuration/KafkaSenderConfiguration.java
+/home/pesho/Documents/Projects/word-game/records-storage/src/test/java/com/wordgame/recordsstorage/service/fetcher/GameRecordsFetcherTest.java
+/home/pesho/Documents/Projects/word-game/records-storage/src/test/java/com/wordgame/recordsstorage/service/persister/GameRecordsPersisterTest.java
+/home/pesho/Documents/Projects/word-game/records-storage/src/test/java/com/wordgame/recordsstorage/configuration/RepositoryConfiguration.java
+/home/pesho/Documents/Projects/word-game/records-storage/src/test/java/com/wordgame/recordsstorage/repository/GameRecordsRepositoryTest.java
+/home/pesho/Documents/Projects/word-game/records-storage/src/test/java/com/wordgame/recordsstorage/repository/SqlParameterQueryCreatorTest.java

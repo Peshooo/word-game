@@ -4,7 +4,6 @@ com/wordgame/recordsstorage/listener/StandardGameRecordsMessageListener.class
 com/wordgame/recordsstorage/model/GameRecordsResponse.class
 com/wordgame/recordsstorage/configuration/KafkaConsumerConfiguration.class
 com/wordgame/recordsstorage/service/fetcher/GameRecordsFetcher.class
-com/wordgame/recordsstorage/service/GameModesService.class
 com/wordgame/recordsstorage/service/persister/GameRecordsPersister.class
 com/wordgame/recordsstorage/controller/GameRecordsController.class
 com/wordgame/recordsstorage/model/GameRecordMessage.class
@@ -17,7 +16,6 @@ com/wordgame/recordsstorage/service/deleter/OldGameRecordsDeleter.class
 com/wordgame/recordsstorage/listener/SurvivalGameRecordsMessageListener.class
 com/wordgame/recordsstorage/configuration/KafkaTopicsConfiguration.class
 com/wordgame/recordsstorage/model/SqlParameterQuery.class
-com/wordgame/recordsstorage/repository/GameRecordsJdbcRepository.class
 com/wordgame/recordsstorage/configuration/Constants.class
 com/wordgame/recordsstorage/configuration/GameModesConfiguration.class
 com/wordgame/recordsstorage/Application.class

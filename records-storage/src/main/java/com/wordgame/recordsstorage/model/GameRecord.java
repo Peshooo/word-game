@@ -1,5 +1,7 @@
 package com.wordgame.recordsstorage.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
@@ -19,6 +21,7 @@ public class GameRecord {
         this.createdAt = createdAt;
     }
 
+    @JsonIgnore
     public String getGameId() {
         return gameId;
     }
@@ -31,6 +34,7 @@ public class GameRecord {
         return score;
     }
 
+    @JsonIgnore
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }

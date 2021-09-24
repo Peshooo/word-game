@@ -10,7 +10,6 @@
 /home/pesho/Documents/Projects/word-game/records-storage/src/main/java/com/wordgame/recordsstorage/configuration/SchedulingConfiguration.java
 /home/pesho/Documents/Projects/word-game/records-storage/src/main/java/com/wordgame/recordsstorage/Application.java
 /home/pesho/Documents/Projects/word-game/records-storage/src/main/java/com/wordgame/recordsstorage/controller/GameRecordsController.java
-/home/pesho/Documents/Projects/word-game/records-storage/src/main/java/com/wordgame/recordsstorage/service/GameModesService.java
 /home/pesho/Documents/Projects/word-game/records-storage/src/main/java/com/wordgame/recordsstorage/model/GameRecordsResponse.java
 /home/pesho/Documents/Projects/word-game/records-storage/src/main/java/com/wordgame/recordsstorage/model/GameMode.java
 /home/pesho/Documents/Projects/word-game/records-storage/src/main/java/com/wordgame/recordsstorage/listener/SurvivalGameRecordsMessageListener.java
@@ -18,6 +17,6 @@
 /home/pesho/Documents/Projects/word-game/records-storage/src/main/java/com/wordgame/recordsstorage/configuration/Constants.java
 /home/pesho/Documents/Projects/word-game/records-storage/src/main/java/com/wordgame/recordsstorage/service/handler/GameRecordsMessageHandler.java
 /home/pesho/Documents/Projects/word-game/records-storage/src/main/java/com/wordgame/recordsstorage/model/SqlParameterQuery.java
-/home/pesho/Documents/Projects/word-game/records-storage/src/main/java/com/wordgame/recordsstorage/repository/GameRecordsJdbcRepository.java
+/home/pesho/Documents/Projects/word-game/records-storage/src/main/java/com/wordgame/recordsstorage/repository/GameRecordsRepository.java
 /home/pesho/Documents/Projects/word-game/records-storage/src/main/java/com/wordgame/recordsstorage/repository/SqlParameterQueryCreator.java
 /home/pesho/Documents/Projects/word-game/records-storage/src/main/java/com/wordgame/recordsstorage/configuration/KafkaConsumerConfiguration.java
