@@ -100,7 +100,7 @@
 
     <script>
         var stompClient = null;
-        var socket = new SockJS('http://localhost:8081/game-ws');
+        var socket = new SockJS('/game-ws');
         var gameId = "";
 
         function generateGameId() {

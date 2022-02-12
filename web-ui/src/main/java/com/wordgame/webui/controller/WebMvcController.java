@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.wordgame.webui.model.GameRecord;
 import com.wordgame.webui.model.GameRecordsResponse;
 import com.wordgame.webui.service.GameServerRestClient;
-import com.wordgame.webui.service.RecordsStorageRestClient;
+import com.wordgame.webui.service.RecordsStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,14 +18,14 @@ import java.util.Map;
 @Controller
 public class WebMvcController {
     @Autowired
-    private RecordsStorageRestClient recordsStorageRestClient;
+    private RecordsStorageService recordsStorageService;
 
     @Autowired
     private GameServerRestClient gameServerRestClient;
 
     @RequestMapping("/")
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
-        GameRecordsResponse gameRecordsResponse = recordsStorageRestClient.getGameRecords();
+        GameRecordsResponse gameRecordsResponse = recordsStorageService.getGameRecords();
         List<GameRecord> standardTopFive = gameRecordsResponse.getGameRecordsByGameMode().get("standard"); //Ugly but it's kinda client-side code so at least some ugliness is required.
         List<GameRecord> survivalTopFive = gameRecordsResponse.getGameRecordsByGameMode().get("survival"); //Ugly but it's kinda client-side code so at least some ugliness is required.
 

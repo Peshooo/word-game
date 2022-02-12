@@ -1,0 +1,30 @@
+package com.wordgame.webui.game.controller;
+
+import com.wordgame.webui.game.model.GameMode;
+import com.wordgame.webui.game.service.GamesService;
+import com.wordgame.webui.model.CreateGameResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+@RequestMapping("/game")
+public class CreateGameController {
+    @Autowired
+    private GamesService gamesService;
+
+    @PostMapping("/standard")
+    @ResponseBody
+    public CreateGameResponse createStandardGame(@RequestParam String nickname) {
+        return gamesService.createGame(GameMode.STANDARD, nickname);
+    }
+
+    @PostMapping("/survival")
+    @ResponseBody
+    public CreateGameResponse createSurvivalGame(@RequestParam String nickname) {
+        return gamesService.createGame(GameMode.SURVIVAL, nickname);
+    }
+}
