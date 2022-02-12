@@ -1,3 +1,4 @@
+com/wordgame/webui/notifications/service/NotificationsService.class
 com/wordgame/webui/game/model/Word$Builder.class
 com/wordgame/webui/game/util/GameStateResponseTranslator.class
 com/wordgame/webui/game/service/DeleteScheduler.class
@@ -23,15 +24,19 @@ com/wordgame/webui/game/controller/CreateGameController.class
 com/wordgame/webui/game/model/GameMode.class
 com/wordgame/webui/model/GameRecord.class
 com/wordgame/webui/game/service/GameFactory$1.class
+com/wordgame/webui/notifications/service/CreateNotificationRequest.class
 com/wordgame/webui/game/model/WordMatches.class
 com/wordgame/webui/game/model/Word$1.class
 com/wordgame/webui/filter/NicknameFilter.class
 com/wordgame/webui/service/RecordsStorageService.class
+com/wordgame/webui/notifications/service/NotificationsResponse.class
 com/wordgame/webui/game/service/manager/ConcurrentHashMapGamesManager.class
 com/wordgame/webui/game/model/Game.class
 com/wordgame/webui/model/GameRecordsResponse.class
 com/wordgame/webui/game/model/GameStatus.class
 com/wordgame/webui/game/model/SurvivalGame.class
+com/wordgame/webui/notifications/service/Notification.class
 com/wordgame/webui/game/model/Vector.class
 com/wordgame/webui/game/model/GameStateResponse.class
 com/wordgame/webui/game/util/WordFactory.class
+com/wordgame/webui/notifications/service/NotificationsController.class
