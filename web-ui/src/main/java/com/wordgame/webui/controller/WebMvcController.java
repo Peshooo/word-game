@@ -1,6 +1,7 @@
 package com.wordgame.webui.controller;
 
 import com.google.common.collect.ImmutableMap;
+import com.wordgame.webui.insights.DailyCounter;
 import com.wordgame.webui.model.GameRecord;
 import com.wordgame.webui.model.GameRecordsResponse;
 import com.wordgame.webui.notifications.service.Notification;
@@ -32,6 +33,7 @@ public class WebMvcController {
     private NotificationsService notificationsService;
 
     @RequestMapping("/")
+    @DailyCounter(key = "OPEN_INDEX")
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
         List<String> notifications = notificationsService.getNotifications().getNotifications().stream().map(Notification::getMessage).collect(Collectors.collectingAndThen(Collectors.toList(), l -> {
             Collections.reverse(l);
@@ -54,6 +56,7 @@ public class WebMvcController {
     }
 
     @RequestMapping("/standard")
+    @DailyCounter(key = "OPEN_STANDARD")
     public ModelAndView standard(HttpServletRequest request, HttpServletResponse response) {
         List<String> notifications = notificationsService.getNotifications().getNotifications().stream().map(Notification::getMessage).collect(Collectors.collectingAndThen(Collectors.toList(), l -> {
             Collections.reverse(l);
@@ -72,6 +75,7 @@ public class WebMvcController {
     }
 
     @RequestMapping("/survival")
+    @DailyCounter(key = "OPEN_SURVIVAL")
     public ModelAndView survival(HttpServletRequest request, HttpServletResponse response) {
         List<String> notifications = notificationsService.getNotifications().getNotifications().stream().map(Notification::getMessage).collect(Collectors.collectingAndThen(Collectors.toList(), l -> {
             Collections.reverse(l);
@@ -90,6 +94,7 @@ public class WebMvcController {
     }
 
     @RequestMapping("/nickname")
+    @DailyCounter(key = "OPEN_NICKNAME")
     public ModelAndView nickname(HttpServletRequest request, HttpServletResponse response) {
         return new ModelAndView("nickname");
     }

@@ -18,7 +18,7 @@ public class NicknameFilter implements Filter {
     private static final String NICKNAME = "nickname";
     private static final List<String> PATHS_TO_SKIP = ImmutableList.of(
             NICKNAME, "images", "files", "scripts",
-            "styles", "WEB-INF", "notifications");
+            "styles", "WEB-INF", "notifications", "insights");
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
